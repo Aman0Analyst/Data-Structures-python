@@ -10,7 +10,7 @@ Dequeue(): Removes an item from the queue. The items are popped in the same orde
 Front(): Get the front item from queue.
 Rear(): Get the last item from queue.
 
-adding some new Information
+
 '''
 
 class Node:
