@@ -29,6 +29,10 @@ class Stack:
         self.top = Node(value)
         self.size = 1
     
+    def __init__(self):
+        self.top = None
+        self.size = 0
+
     def isempty(self):
         '''
         Checks if stack is empty
@@ -89,7 +93,7 @@ class Stack:
     
 
 if __name__ == '__main__':
-    a = Stack(0)
+    a = Stack()
     for i in range(8):
         a.push(i)
     
@@ -109,7 +113,7 @@ if __name__ == '__main__':
     print('calling Presentation of stack:')
     print(a)
 
-    for i in range(a.size):
+    for _ in range(a.size):
         a.pop()
 
     print(a.isempty())
