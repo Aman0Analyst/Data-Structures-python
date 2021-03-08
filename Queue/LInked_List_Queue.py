@@ -89,7 +89,7 @@ class Queue:
 
 if __name__ == '__main__':
     a = Queue(5)
-
+    
     for i in range(8):
         a.enqueue(i)
     
