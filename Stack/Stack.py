@@ -72,7 +72,7 @@ class Stack:
             popped element of the stack
 
         '''
-        if self.top.prev != None:
+        if self.size != 0 :
             poping = self.top.value
             self.top = self.top.prev
             self.size -= 1
@@ -106,15 +106,18 @@ if __name__ == '__main__':
 
     print('calling Presentation of stack:')
     print(a)
-
+    print('Size of stack : ',a.size)
+    
     print('calling Push : 56') 
     a.push(56)
     print('calling Peek : ', a.peek())    
     print('calling Presentation of stack:')
     print(a)
+    print('Size of stack : ',a.size)
 
-    for _ in range(a.size):
-        a.pop()
+    for _ in range(20):
+        print('popped : ',a.pop())
 
     print(a.isempty())
     print(a.pop())
+    print('Size of stack : ',a.size)

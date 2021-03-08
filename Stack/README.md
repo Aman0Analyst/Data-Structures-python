@@ -1,7 +1,12 @@
-# Console Output (Linked_List_Stack.py)
+# Console Output (Stack.py)
 
 **based on linked lists**
 ___________________________
+The Stack.py file will be used as the main class for the poblems solved in this repo using stack
+
+    $ python Stack.py
+
+will produce the following output
 
     calling Presentation of stack:
 

@@ -1,8 +1,12 @@
 
-# Console Output (Linked_List_queue.py)
+# Console Output (Queue.py)
 
 **based on linked lists**
 ___________________________
+
+    $ python Stack.py
+
+will give the following output
 
     FRONT >> 5 --> 0 --> 1 --> 2 --> 3 --> 4 --> 5 --> 6 --> 7  >> Rear
 
