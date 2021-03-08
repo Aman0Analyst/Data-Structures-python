@@ -11,8 +11,9 @@ pop()       – Remove and return a value in the head of the stack. If the stack
 
 """
 
+
 class Node:
-    def __init__(self,value):
+    def __init__(self, value):
         '''
         constructor for the new node to be interted in a stack
         parameters:
@@ -21,14 +22,15 @@ class Node:
         self.value = value
         self.prev = None
 
+
 class Stack:
-    def __init__(self,value):
+    def __init__(self, value):
         '''
         Constructor for the stack
         '''
         self.top = Node(value)
         self.size = 1
-    
+
     def __init__(self):
         self.top = None
         self.size = 0
@@ -36,17 +38,17 @@ class Stack:
     def isempty(self):
         '''
         Checks if stack is empty
-        
+
         Return:
             bool : True if stack is empty
                    and False if stack is not Empty
         '''
         return self.size == 0
 
-    def push(self,value):
+    def push(self, value):
         '''
         Pushes new Node in stack 
-        
+
         Parameters:
             value : value to be stored in new node inserted
                     to stack
@@ -57,13 +59,12 @@ class Stack:
         self.top = node
         self.size += 1
 
-
     def peek(self):
         if self.isempty():
             return "Stack is empty"
-        else:     
+        else:
             tops = self.top.value
-            return tops        
+            return tops
 
     def pop(self):
         '''
@@ -72,12 +73,12 @@ class Stack:
             popped element of the stack
 
         '''
-        if self.size != 0 :
+        if self.size != 0:
             poping = self.top.value
             self.top = self.top.prev
             self.size -= 1
         else:
-            return 'Stack is empty'    
+            return 'Stack is empty'
         return poping
 
     def __str__(self):
@@ -90,34 +91,34 @@ class Stack:
             rep = rep + str(curr.value) + " --> "
             curr = curr.prev
         return f"\n{rep[:-4]}\n"
-    
+
 
 if __name__ == '__main__':
     a = Stack()
+    print('Pushing 8 new values to stack')
     for i in range(8):
         a.push(i)
-    
-    print('calling Presentation of stack:')
+    print('Calling Presentation of stack:')
     print(a)
 
-    print('calling Peek : ', a.peek())    
-    print('calling Pop : ',  a.pop())
+    print('Calling Peek : ', a.peek())
+    print('Calling Pop : ',  a.pop())
     print('caliing Peek : ', a.peek())
 
-    print('calling Presentation of stack:')
+    print('Calling Presentation of stack:')
     print(a)
-    print('Size of stack : ',a.size)
-    
-    print('calling Push : 56') 
+    print('Size of stack : ', a.size)
+
+    print('Calling Push : 56')
     a.push(56)
-    print('calling Peek : ', a.peek())    
-    print('calling Presentation of stack:')
+    print('Calling Peek : ', a.peek())
+    print('Calling Presentation of stack:')
     print(a)
-    print('Size of stack : ',a.size)
+    print('Size of stack : ', a.size)
 
-    for _ in range(20):
-        print('popped : ',a.pop())
+    for _ in range(10):
+        print('popped : ', a.pop())
 
-    print(a.isempty())
+    print('Is stack empty ? ',a.isempty())
     print(a.pop())
-    print('Size of stack : ',a.size)
+    print('Size of stack : ', a.size)

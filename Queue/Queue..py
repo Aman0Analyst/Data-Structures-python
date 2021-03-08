@@ -13,8 +13,9 @@ Rear(): Get the last item from queue.
 
 '''
 
+
 class Node:
-    def __init__(self,value):
+    def __init__(self, value):
         '''
         constructor for the new node to be interted in a queue
         parameters:
@@ -23,17 +24,29 @@ class Node:
         self.value = value
         self.new = None
 
+
 class Queue:
-    def __init__(self,value):
+    def __init__(self, value):
+        '''
+        Costructur with arguments
+        '''
         self.front = Node(value)
         self.rear = self.front
-        self.front.new = self.rear 
+        self.front.new = self.rear
         self.size = 1
 
-    def enqueue(self,value):
+    def __init__(self):
+        '''
+        Costructur with no arguments
+        '''
+        self.front = None
+        self.rear = None
+        self.size = 0
+
+    def enqueue(self, value):
         '''
         Pushes new Node in queue 
-        
+
         Parameters:
             value : value to be stored in new node inserted
                     to queue
@@ -48,32 +61,35 @@ class Queue:
         member = self.front.value
         self.front = self.front.new
         self.size -= 1
-        return member    
+        return member
 
     def front_element(self):
         if not self.isempty():
             return self.front.value
-        else: return 'Empty queue'
+        else:
+            return 'Empty queue'
 
     def rear_element(self):
         '''
-
+        gives the value present at rear end of queue
         '''
         if not self.isempty():
-            return self.rear.value    
-        else: return 'Empty queue'
+            return self.rear.value
+        else:
+            return 'Empty queue'
 
     def isempty(self):
         '''
         Checks if queue is empty
-        
+
         Return:
             bool : True if queue is empty
                    and False if queue is not Empty
         '''
         if self.size == 0:
             return True
-        else: return False    
+        else:
+            return False
 
     def __str__(self):
         '''
@@ -84,15 +100,15 @@ class Queue:
         while curr:
             rep = rep + str(curr.value) + " --> "
             curr = curr.new
-        return f"\nFRONT >> {rep[:-4]} >> Rear\n"         
+        return f"\nFRONT >> {rep[:-4]} >> Rear\n"
 
 
 if __name__ == '__main__':
     a = Queue(5)
-    
+
     for i in range(8):
         a.enqueue(i)
-    
+
     print(a)
 
     print(a.front_element())
@@ -100,7 +116,7 @@ if __name__ == '__main__':
 
     while not a.isempty():
         print(a.dequeue())
-        print(a,'\n')
+        print(a, '\n')
 
     print(a.front_element())
     print(a.rear_element())

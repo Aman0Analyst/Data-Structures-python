@@ -4,7 +4,7 @@
 **based on linked lists**
 ___________________________
 
-    $ python Stack.py
+    $ python Queue.py
 
 will give the following output
 

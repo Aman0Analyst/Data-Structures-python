@@ -1,5 +1,5 @@
 class Node:
-    def __init__(self,value):
+    def __init__(self, value):
         '''
         constructor for the new node to be interted in a queue
         parameters:
@@ -9,21 +9,22 @@ class Node:
         self.rear = None
         self.front = None
 
+
 class Deque:
-    def __init__(self,value):
+    def __init__(self, value):
         self.front = Node(value)
         self.rear = self.front
         self.front_number = 1
         self.rear_number = 0
 
-    def insert_front(self,value):
+    def insert_front(self, value):
         node = Node(value)
         self.front.front = node
         node.rear = self.front
-        self.front = node    
+        self.front = node
         self.front_number += 1
 
-    def insert_rear(self,value):
+    def insert_rear(self, value):
         node = Node(value)
         self.rear.rear = node
         node.front = self.rear
@@ -51,14 +52,14 @@ class Deque:
     def size(self):
         return self.front_number - self.rear_number
 
-
     def __str__(self):
         curr = self.front
         rep = ''
         while curr:
-            rep = rep + f'{curr.value}'+ '-->'
+            rep = rep + f'{curr.value}' + '-->'
             curr = curr.rear
         return rep[:-3]
+
 
 if __name__ == "__main__":
     a = Deque(4)
@@ -72,9 +73,9 @@ if __name__ == "__main__":
     print('\nInserting elements from rear')
     for i in range(4):
         a.insert_rear(i)
-        
+
     print(a)
-    
+
     print('\nDeleting from front')
     value = a.delete_front()
     print(value)
